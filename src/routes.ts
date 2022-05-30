@@ -20,7 +20,7 @@ router.get('/dashboard', validateToken, (request, response) => {
 })
 
 router.get('/', (request, response) => {
-  response.send('Server is up :)')
+  response.send('Server is up =)')
 })
 
 export default router
