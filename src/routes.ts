@@ -19,4 +19,8 @@ router.get('/dashboard', validateToken, (request, response) => {
   response.send('Protected route')
 })
 
+router.get('/', (request, response) => {
+  response.send('Server is up!')
+})
+
 export default router
