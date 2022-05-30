@@ -46,7 +46,7 @@ jobs:
           cd ./app/server
           git stash
           git stash clear
-          git pull origin develop
+          git pull origin main
           
         host: ${{ secrets.SSH_HOST }}
         user: ${{ secrets.SSH_USER }}
