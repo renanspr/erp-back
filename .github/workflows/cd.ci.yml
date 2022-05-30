@@ -47,6 +47,8 @@ jobs:
           git stash
           git stash clear
           git pull origin main
+          npm install
+          npm run migrate:dev
           npm run build
           
         host: ${{ secrets.SSH_HOST }}
