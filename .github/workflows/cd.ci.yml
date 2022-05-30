@@ -47,6 +47,7 @@ jobs:
           git stash
           git stash clear
           git pull origin main
+          npm run build
           
         host: ${{ secrets.SSH_HOST }}
         user: ${{ secrets.SSH_USER }}
