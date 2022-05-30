@@ -1,10 +1,18 @@
-const bcrypt = require('bcrypt')
 import { PrismaCreateUserModel } from '@models/user/create-user.model'
+
+const bcrypt = require('bcrypt')
 
 interface CreateUserRequest {
   name: string
   email: string
   password: string
+}
+
+const encryptPassword = (password: string) => {
+  const salt = bcrypt.genSaltSync(10)
+  const hash = bcrypt.hashSync(password, salt)
+
+  return hash
 }
 
 export class CreateUserService {
@@ -26,11 +34,4 @@ export class CreateUserService {
 
     await this.prismaUserModel.create({ name, email, password: hashPassword })
   }
-}
-
-const encryptPassword = (password: string) => {
-  const salt = bcrypt.genSaltSync(10)
-  const hash = bcrypt.hashSync(password, salt)
-
-  return hash
 }

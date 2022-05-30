@@ -4,3 +4,6 @@ node_modules
 # Ignore artifacts:
 build
 coverage
+tsconfig.json
+package-lock.json
+package.json

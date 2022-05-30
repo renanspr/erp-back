@@ -1,6 +1,7 @@
-const bcrypt = require('bcrypt')
 import { sign } from 'jsonwebtoken'
 import { PrismaShowUserModel } from '@models/user/show-user.model'
+
+const bcrypt = require('bcrypt')
 
 interface ShowUserRequest {
   email: string
