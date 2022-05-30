@@ -24,7 +24,7 @@ describe('Create user', () => {
   it('should not be able to create a user without a name', async () => {
     await expect(
       createUserService.execute({
-        name: 'teste',
+        name: '',
         email: 'test@email.com',
         password: '123456',
       })
