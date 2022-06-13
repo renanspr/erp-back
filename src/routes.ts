@@ -6,20 +6,20 @@ import { validateToken } from 'middleware'
 const router = Router()
 
 // User routes
-router.post('/users', (request, response) => {
+router.post('/api/users', (request, response) => {
   createUserController.handle(request, response)
 })
 
 // Auth routes
-router.post('/login', (request, response) => {
+router.post('/api/login', (request, response) => {
   authenticateUserController.handle(request, response)
 })
 
-router.get('/dashboard', validateToken, (request, response) => {
+router.get('/api/dashboard', validateToken, (request, response) => {
   response.send('Protected route')
 })
 
-router.get('/', (request, response) => {
+router.get('/api', (request, response) => {
   response.send('Server is up :)')
 })
 
